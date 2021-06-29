@@ -6,6 +6,13 @@ let listMenuItemData;
 fetch('https://app-travel-api.herokuapp.com/list-menu')
   .then((response) => response.json())
   .then((data) => (listMenuItemData = data.data))
+  .then((menus) => {
+      var htmls = menus.map( menu => {
+      return `<li><a href="#"></a>${menu.name}</li>`
+      })
+      var html = htmls.join('')
+      document.querySelector('.list-items').innerHTML = html;
+    })
   .then(() => loadData());
 
 async function loadData() {
