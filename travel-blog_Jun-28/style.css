@@ -395,7 +395,7 @@ button {
   left: 0;
   height: 100vh;
   background-image: linear-gradient(180deg, rgbargba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  width: 20%;
+  width: 15%;
   color: whitesmoke;
 }
 .heading-menu {
@@ -419,6 +419,7 @@ button {
 
 .gallery {
   width: 80%;
+  margin: auto;
 }
 
 .col-xl-3 {
@@ -454,6 +455,8 @@ button {
   width: 100%;
   position: absolute;
   bottom: 0;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.562);
   color: white;
 }
