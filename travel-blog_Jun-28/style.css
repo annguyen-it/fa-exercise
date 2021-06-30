@@ -369,6 +369,13 @@ button {
     max-width: 1320px;
   }
 }
+
+@media (max-width: 576px) {  
+  .card {
+    transform: rotate(0deg)!important;
+  }
+}
+
 /* #endregion */
 
 /* Hero */
@@ -379,13 +386,11 @@ button {
 }
 
 #heroVideo {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* min-width: 100%;
-  min-height: 100%; */
   object-fit: cover;
   z-index: -1;
   pointer-events: none;
@@ -396,8 +401,8 @@ button {
   top: 0;
   left: 0;
   height: 100vh;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  width: 15%;
+  background-image: linear-gradient(180deg, rgba(112, 112, 112, 0.8), rgba(0, 0, 0, 0.9));
+  width: 20%;
   color: whitesmoke;
 }
 .heading-menu {
@@ -405,23 +410,25 @@ button {
   border-bottom: 1px solid rgb(214, 211, 211);
 }
 .heading-menu p {
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .list-items li {
-  padding: 1rem;
+  padding: 20px 20px;
   border-bottom: 1px solid rgb(189, 187, 187);
 }
 .list-items li:hover {
   background: rgb(112, 93, 93);
-  color: white;
 }
 
 /* gallery */
-
 .gallery {
   width: 80%;
-  margin: auto;
+}
+
+.row {
+  margin-left: 0;
+  padding: 80px;
 }
 
 .col-xl-3 {
@@ -434,7 +441,8 @@ button {
 }
 
 .card-img-top {
-  height: 300px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .col-xl-3:nth-of-type(2n-1) .card {
@@ -455,11 +463,14 @@ button {
 
 .card-body {
   width: 100%;
+  height: 20%;
   position: absolute;
   bottom: 0;
-  height: 2.5rem;
-  padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.562);
   color: white;
+}
+
+.card-text {
+  font-size: 20px;
 }
 /* end-gallery */
