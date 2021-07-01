@@ -19,6 +19,7 @@ function loadSidebar() {
 }
 
 async function loadGallery() {
+  let html =''
   const requestId = listMenuItemData[currentTabIndex].id;
 
   console.log(`https://app-travel-api.herokuapp.com/list-travel/${requestId}`);
@@ -29,9 +30,17 @@ async function loadGallery() {
       console.log(data.data);
 
       data.data.forEach((item, index) => {
-        galleryItems[index].querySelector('img').setAttribute('src', item.thumb);
-        galleryItems[index].querySelector('.card-text').innerText = item.title;
+        html += `<div class="col-xl-3 col-md-6">
+          <div class="card gallery-item" style="width: 18rem;">
+            <img src="${item.thumb}" class="card-img-top" alt="travel-picture">
+            <div class="card-body">
+              <p class="card-text">${item.title}</p>
+            </div>
+          </div>
+        </div>`
       });
+    
+      document.querySelector('#gallery').innerHTML = html
     });
 }
 
