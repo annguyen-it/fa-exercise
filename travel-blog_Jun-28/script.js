@@ -31,7 +31,7 @@ async function loadGallery() {
 
       data.data.forEach((item, index) => {
         html += `<div class="col-xl-3 col-md-6">
-          <div class="card gallery-item" style="width: 18rem;">
+          <div class="card gallery-item">
             <img src="${item.thumb}" class="card-img-top" alt="travel-picture">
             <div class="card-body">
               <p class="card-text">${item.title}</p>
