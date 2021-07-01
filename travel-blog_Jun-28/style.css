@@ -463,4 +463,10 @@ button {
   background-color: rgba(0, 0, 0, 0.562);
   color: white;
 }
+
+@media (max-width: 576px) {  
+  .card {
+    transform: rotate(0deg)!important;
+  }
+}
 /* end-gallery */
