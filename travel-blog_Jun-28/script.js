@@ -11,25 +11,21 @@ fetch('https://app-travel-api.herokuapp.com/list-menu')
   .then(() => playBackgroundVideo());
 
 function loadSidebar() {
-  var htmls = listMenuItemData.map((menu) => {
+  const htmls = listMenuItemData.map((menu) => {
     return `<li><a href="#"></a>${menu.name}</li>`;
   });
-  var html = htmls.join('');
+  const html = htmls.join('');
   document.querySelector('.list-items').innerHTML = html;
 }
 
 async function loadGallery() {
-  let html =''
+  let html = '';
   const requestId = listMenuItemData[currentTabIndex].id;
-
-  console.log(`https://app-travel-api.herokuapp.com/list-travel/${requestId}`);
 
   await fetch(`https://app-travel-api.herokuapp.com/list-travel/${requestId}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.data);
-
-      data.data.forEach((item, index) => {
+      data.data.forEach((item) => {
         html += `<div class="col-xl-3 col-md-6">
           <div class="card gallery-item">
             <img src="${item.thumb}" class="card-img-top" alt="travel-picture">
@@ -37,10 +33,10 @@ async function loadGallery() {
               <p class="card-text">${item.title}</p>
             </div>
           </div>
-        </div>`
+        </div>`;
       });
-    
-      document.querySelector('#gallery').innerHTML = html
+
+      document.querySelector('#gallery').innerHTML = html;
     });
 }
 
